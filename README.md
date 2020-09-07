@@ -1,3 +1,17 @@
+# Amazob Clone
+
+## (c) Amazon, 2020
+
+### Tina Sosa
+
+#### Check out my deployed web app:
+
+[Amazon Clone](https://clone-33d8a.web.app/ 'Amazon Clone')
+
+#### Marketing copy:
+
+A clone of the e-commerce site Amazon.com.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
