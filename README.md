@@ -1,4 +1,4 @@
-# Amazob Clone
+# Amazon Clone
 
 ## (c) Amazon, 2020
 
