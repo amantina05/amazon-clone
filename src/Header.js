@@ -8,7 +8,7 @@ import { auth } from './firebase';
 
 function Header() {
   const [{ basket, user }] = useStateValue();
-  console.log(basket);
+  // console.log(basket);
 
   const login = () => {
     if (user) {
@@ -42,7 +42,7 @@ function Header() {
         </Link>
 
         {/* link 2 */}
-        <Link to="/login" className="header_link">
+        <Link to="/orders" className="header_link">
           <div className="header_option">
             <span className="header_optionLineOne">Returns</span>
             <span className="header_optionLineTwo">& Orders</span>
@@ -50,7 +50,7 @@ function Header() {
         </Link>
 
         {/* link 3 */}
-        <Link to="/login" className="header_link">
+        <Link to="/" className="header_link">
           <div className="header_option">
             <span className="header_optionLineOne">Your</span>
             <span className="header_optionLineTwo">Prime</span>
