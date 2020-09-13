@@ -14,6 +14,11 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    case 'EMPTY_BASKET':
+      return {
+        ...state,
+        basket: [],
+      };
     case 'ADD_TO_BASKET':
       //logic for adding item to basket
       return { ...state, basket: [...state.basket, action.item] };
