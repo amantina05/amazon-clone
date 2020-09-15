@@ -8,9 +8,13 @@
 
 [Amazon Clone](https://clone-33d8a.web.app/ 'Amazon Clone')
 
+#### Video Walk-through:
+
+![](https://j.gifs.com/JyBRwD.gif)
+
 #### Marketing copy:
 
-A clone of the e-commerce site Amazon.com.
+A clone of the e-commerce site Amazon.com. This project was created by following a Live Stream video from CleverProgrammer YouTube channel.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -18,6 +18,19 @@ app.use(express.json());
 //api routes
 app.get('/', (request, response) => response.status(200).send('hello bina'));
 
+app.get('/jokes/random', (req, res) => {
+  request(
+    { url: 'https://joke-api-strict-cors.appspot.com/jokes/random' },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+
+      res.json(JSON.parse(body));
+    }
+  );
+});
+
 // app.post('/payments/create', async (request, response) => {
 //   const total = request.query.total;
 //   console.log('Payemnt Request Recieved, YAY! for this amount', total);

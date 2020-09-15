@@ -8,6 +8,10 @@ const instance = axios.create({
   // },
 
   baseURL: 'https://us-central1-challenge-4b2b2.cloudfunctions.net/api',
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, PATCH, OPTIONS',
+  },
 });
 
 export default instance;

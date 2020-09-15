@@ -1,42 +1,98 @@
+// export const initialState = {
+//   basket: [],
+//   user: null,
+// };
+
+// export const getBasketTotal = (basket) =>
+//   basket?.reduce((amount, item) => item.price + amount, 0);
+
+// const reducer = (state, action) => {
+//   console.log('clicked', action);
+//   switch (action.type) {
+//     case 'SET_USER':
+//       return {
+//         ...state,
+//         user: action.user,
+//       };
+//     case 'EMPTY_BASKET':
+//       return {
+//         ...state,
+//         basket: [],
+//       };
+//     case 'ADD_TO_BASKET':
+//       //logic for adding item to basket
+//       return { ...state, basket: [...state.basket, action.item] };
+//     case 'REMOVE_FROM_BASKET':
+//       //logic for removing item from basket
+//       let newBasket = [...state.basket];
+//       const index = state.basket.findIndex(
+//         (basketItem) => basketItem.id === action.id
+//       );
+//       if (index >= 0) {
+//         //item exists in basket, remove it
+//         newBasket.splice(index, 1);
+//       } else {
+//         console.warn(
+//           `Cant remove product {id: ${action.id}} as its not in basket.`
+//         );
+//       }
+//       return { ...state, basket: newBasket };
+
+//     default:
+//       return state;
+//   }
+// };
+
+// export default reducer;
+
 export const initialState = {
   basket: [],
   user: null,
 };
 
+// Selector
 export const getBasketTotal = (basket) =>
   basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
-  console.log('clicked', action);
+  console.log(action);
   switch (action.type) {
-    case 'SET_USER':
+    case 'ADD_TO_BASKET':
       return {
         ...state,
-        user: action.user,
+        basket: [...state.basket, action.item],
       };
+
     case 'EMPTY_BASKET':
       return {
         ...state,
         basket: [],
       };
-    case 'ADD_TO_BASKET':
-      //logic for adding item to basket
-      return { ...state, basket: [...state.basket, action.item] };
+
     case 'REMOVE_FROM_BASKET':
-      //logic for removing item from basket
-      let newBasket = [...state.basket];
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.id
       );
+      let newBasket = [...state.basket];
+
       if (index >= 0) {
-        //item exists in basket, remove it
         newBasket.splice(index, 1);
       } else {
         console.warn(
-          `Cant remove product {id: ${action.id}} as its not in basket.`
+          `Cant remove product (id: ${action.id}) as its not in basket!`
         );
       }
-      return { ...state, basket: newBasket };
+
+      return {
+        ...state,
+        basket: newBasket,
+      };
+
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user,
+      };
 
     default:
       return state;
